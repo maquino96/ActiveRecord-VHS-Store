@@ -1,10 +1,15 @@
 class Vhs < ActiveRecord::Base
-    after_initialize :add_serial_number
+    # after_initialize :add_serial_number
+
+    has_many :rentals
+    has_many :clients, through: :rentals 
+    belongs_to :movie 
 
 
     private
 
-    # generates serial number based on the title
+
+    #generates serial number based on the title
     def add_serial_number
         serial_number = serial_number_stub
         # Converting to Base 36 can be useful when you want to generate random combinations of letters and numbers, since it counts using every number from 0 to 9 and then every letter from a to z. Read more about base 36 here: https://en.wikipedia.org/wiki/Senary#Base_36_as_senary_compression
