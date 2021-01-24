@@ -80,7 +80,7 @@ Build the following functionality:
 
 ### `Rental`
 **READ**
-- `Rental#due_date` - returns a date one week from when the record was created
+-COMPLETED- `Rental#due_date` - returns a date one week from when the record was created
 - `Rental.past_due_date` - returns a list of all the rentals past due date, currently rented or rented in the past
 
 ### `Client`
@@ -97,7 +97,7 @@ Build the following functionality:
 
 
 **UPDATE**
-- `Client#return_one` - accepts an argument of an vhs instance, finds the corresponding rental and updates the rental's `current` attribute from `true` to `false`
+-COMPLETE- `Client#return_one` - accepts an argument of an vhs instance, finds the corresponding rental and updates the rental's `current` attribute from `true` to `false`
 - `Client#return_all`- updates `current` attribute from `true` to `false` on all client's rentals 
 
 

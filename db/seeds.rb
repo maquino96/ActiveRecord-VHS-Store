@@ -218,6 +218,7 @@ end
 # create rentals (min 20, max 60)
 20.times do
     number_of_vhs_rented_at_once = rand(1..3)
+    # puts number_of_vhs_rented_at_once
     client_id = random_client_id
     vhs_id = find_vhs_id_for_rent
     number_of_vhs_rented_at_once.times do
@@ -233,8 +234,7 @@ Rental.all.each do |rental|
 end
 
 #Get array of duplicated VHS ids
-
-# switched vhs_id_rentals to vhs_copies
+    # switched vhs_id_rentals to vhs_copies
 
 duplicate_vhs_ids = vhs_copies.select {|vhs_id, count| count > 1}.keys
 
@@ -245,8 +245,8 @@ times_rented = this_ids_rentals.count
 index = 0
 
 while index < (times_rented - 1) do
-    rented_date = Faker::Date.between(from: ('2014-09-01'.to_date + index*7.days), to: ('2014-09-03'.to_date + index*7.days))
-    returned_date = Faker::Date.between(from: ('2014-09-05'.to_date + index*7.days), to: ('2014-09-08'.to_date + index*7.days))
+    rented_date = Faker::Date.between(from: ('2020-09-01'.to_date + index*7.days), to: ('2020-09-03'.to_date + index*7.days))
+    returned_date = Faker::Date.between(from: ('2020-09-05'.to_date + index*7.days), to: ('2020-09-08'.to_date + index*7.days))
     rental = this_ids_rentals[index]
     rental.update(current: false,  created_at: rented_date, updated_at: returned_date)
     index += 1
@@ -264,8 +264,8 @@ index = 0
 
 # make some of the rentals be returned on time --- Rental date must fall after earlier rentals. 2 months later should work unless 1 vhs randlom gets 9 copies...
 returned_on_date_number.times do
-rented_date = Faker::Date.between(from: '2014-11-01', to: '2014-11-03')
-returned_date = Faker::Date.between(from: '2014-11-05', to: '2014-11-08')
+rented_date = Faker::Date.between(from: '2020-09-01', to: '2020-09-03')
+returned_date = Faker::Date.between(from: '2020-09-05', to: '2020-09-08')
 rental = Rental.find_by(id: active_rentals[index].id)
 rental.update(current: false,  created_at: rented_date, updated_at: returned_date)
 index += 1
@@ -273,8 +273,8 @@ end
 
 # make some of the rentals be returned late
 returned_late_number.times do
-rented_date = Faker::Date.between(from: '2014-11-01', to: '2014-11-03')
-returned_date = Faker::Date.between(from: '2015-06-15', to: 2.days.ago)
+rented_date = Faker::Date.between(from: '2020-09-01', to: '2020-09-03')
+returned_date = Faker::Date.between(from: '2020-11-15', to: 2.days.ago)
 rental = rental = Rental.find_by(id: active_rentals[index].id)
 index += 1
 rental.update(current: false,  created_at: rented_date, updated_at: returned_date)
