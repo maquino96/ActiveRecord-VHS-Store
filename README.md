@@ -81,7 +81,7 @@ Build the following functionality:
 ### `Rental`
 **READ**
 -COMPLETED- `Rental#due_date` - returns a date one week from when the record was created
-- `Rental.past_due_date` - returns a list of all the rentals past due date, currently rented or rented in the past
+-COMPLETED- `Rental.past_due_date` - returns a list of all the rentals past due date, currently rented or rented in the past
 
 ### `Client`
 **CREATE**
@@ -116,12 +116,12 @@ Build the following functionality:
 
 ### `Movie`
 **READ**
-- `Movie.available_now` - returns a list of all movies currently available at the store
+-test- `Movie.available_now` - returns a list of all movies currently available at the store
 - `Movie.most_clients` ⭐️ - returns an instance of `Movie` that has been rentes by the most people
 - `Movie.most_rentals` - returns a list of TOP3 All Time favorites based on number of rentals
 - `Movie.most_popular_female_director` - returns a string that's a name of a director of the movie made by a female director with most `Rental`s
 - `Movie.newest_first` - returns a list of all the movies from the most recent ones to the oldies but goldies based on the release year
-- `Movie.longest` - returns a list of the movies from the longest to the shortest
+-test-`Movie.longest` - returns a list of the movies from the longest to the shortest
 - `Movie#recommendation` - prints a recommendation that includes a random emoji next to the title, and in new lines: the movie description, its length, director and year of release
 - `Movie.surprise_me` - prints a recommendation for a random movie
 
