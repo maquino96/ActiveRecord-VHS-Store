@@ -9,7 +9,8 @@ class Client < ActiveRecord::Base
 
     def return_one(vhs)
         # needed a variable in order to update the database.
-        user = rentals.find_by(vhs_id: vhs.id)
+        #find and find_by can only be applied to tables
+        user = Rental.all.find_by(current: true, vhs_id: vhs.id)
         user.current = false
         user.save
     end 
